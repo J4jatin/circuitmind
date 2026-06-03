@@ -1,5 +1,9 @@
 # ⚡ CircuitMind — AI-Powered EDA Design Automation
 
+**🔗 Live API:** https://circuitmind.onrender.com/docs  
+**🎛️ Dashboard:** https://circuitmind-eda.streamlit.app  
+**📦 GitHub:** https://github.com/J4jatin/circuitmind
+
 [![CI](https://github.com/jattinshah/circuitmind/actions/workflows/ci.yml/badge.svg)](https://github.com/jattinshah/circuitmind/actions)
 [![Python](https://img.shields.io/badge/python-3.10%20|%203.11-blue)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green)](https://fastapi.tiangolo.com)
@@ -10,14 +14,14 @@ An EDA (Electronic Design Automation) tool for analog circuit analysis, componen
 
 ## 🎯 What It Does
 
-| Feature | Description |
-|---|---|
-| **Circuit Analyzer** | Computes cutoff frequency, time constant, impedance, phase shift, Q-factor, bandwidth for 6 circuit topologies |
-| **Component Generator** | Given a target frequency spec, generates optimal **E24 standard** R/L/C values |
-| **AI Design Advisor** | Claude API integration for natural-language design guidance; offline rule-based fallback |
-| **Streamlit GUI** | Interactive Bode plot visualization and design wizard |
-| **FastAPI REST API** | Production-ready API with Pydantic validation and OpenAPI docs |
-| **CI/CD** | GitHub Actions pipeline on Python 3.10 and 3.11 |
+| Feature                 | Description                                                                                                    |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Circuit Analyzer**    | Computes cutoff frequency, time constant, impedance, phase shift, Q-factor, bandwidth for 6 circuit topologies |
+| **Component Generator** | Given a target frequency spec, generates optimal **E24 standard** R/L/C values                                 |
+| **AI Design Advisor**   | Claude API integration for natural-language design guidance; offline rule-based fallback                       |
+| **Streamlit GUI**       | Interactive Bode plot visualization and design wizard                                                          |
+| **FastAPI REST API**    | Production-ready API with Pydantic validation and OpenAPI docs                                                 |
+| **CI/CD**               | GitHub Actions pipeline on Python 3.10 and 3.11                                                                |
 
 ---
 
@@ -54,13 +58,13 @@ pytest tests/ -v --cov=app
 
 ## 📡 API Endpoints
 
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/health` | Health check |
-| `GET` | `/circuit-types` | List all supported topologies |
-| `POST` | `/analyze` | Analyze circuit → cutoff freq, impedance, gain |
-| `POST` | `/generate` | Generate E24 component values from spec |
-| `POST` | `/advise` | Get AI-powered design recommendations |
+| Method | Endpoint         | Description                                    |
+| ------ | ---------------- | ---------------------------------------------- |
+| `GET`  | `/health`        | Health check                                   |
+| `GET`  | `/circuit-types` | List all supported topologies                  |
+| `POST` | `/analyze`       | Analyze circuit → cutoff freq, impedance, gain |
+| `POST` | `/generate`      | Generate E24 component values from spec        |
+| `POST` | `/advise`        | Get AI-powered design recommendations          |
 
 ### Example: Analyze a 1kHz RC Low-Pass Filter
 
@@ -76,6 +80,7 @@ curl -X POST http://localhost:8000/analyze \
 ```
 
 Response:
+
 ```json
 {
   "circuit_type": "RC Low-Pass Filter",
@@ -113,6 +118,7 @@ tests/
 ```
 
 Run:
+
 ```bash
 pytest tests/ -v --tb=short --cov=app --cov-report=term-missing
 ```
